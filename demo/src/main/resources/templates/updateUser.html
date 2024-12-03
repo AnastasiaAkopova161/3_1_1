@@ -1,0 +1,21 @@
+<th:block th:include="header.html"></th:block>
+<div class="container form-container">
+    <h1>Update User</h1>
+    <form action="/users/edit/${user.id}" method="post">
+        <input type="hidden" id="id" name="id" th:value="${user.id}">
+        <div class="form-group">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" class="form-control" required th:value="${user.firstName}">
+        </div>
+        <div class="form-group">
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" class="form-control" required th:value="${user.lastName}">
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" class="form-control" required th:value="${user.email}">
+        </div>
+        <button type="submit" class="btn btn-primary">Save User</button>
+    </form>
+</div>
+<th:block th:include="footer.html"></th:block>
